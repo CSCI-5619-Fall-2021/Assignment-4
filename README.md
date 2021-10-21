@@ -28,10 +28,12 @@ Graded out of 20 points.
    *Hint: you should modify the `localPosition` transform of the `controller_l` and `controller_r` game objects, which are children of the `LeftHand Controller` and `RightHand Controller` game objects, respectively.*
 3. The user should be able to turn the Go-Go technique on and off using the A button on the right controller or the X button on the left controller.  Pressing either button should toggle the Go-Go technique for *both* hands. (1)
 4. Implement a **Spindle** between the two controllers (see [Lecture 14](https://www.beautiful.ai/player/-MmYjKi7-rNfp52MCqKE), slide 48).  You can use a small object such as a cube to mark the midpoint.  The spindle should only be active when the Go-Go technique is toggled off. (2)
-5. When the user grabs an object when the spindle is active, the object should be translated to the midpoint of the spindle. (2)
+5. When the user grabs an object with either hand when the spindle is active, the object should be translated to the midpoint of the spindle. (2)
 6. When the user moves their hands, the grabbed object should be translated to follow the midpoint of the spindle.  (2)
 7. When the user moves their hands, the grabbed object should be rotated to match the alignment of the spindle.  Note that you only need to worry about yaw and roll (rotation about the Y and Z axes).  (2)
 8. When the user moves their hands closer together or further apart, the grabbed object should be scaled up or down based on the distance between them.  (2)
+
+**Bonus Challenge:**  Implement any of the other manipulation techniques or come up with your own enhancements to one of the techniques above.  Creativity is encouraged!  However, it must be a spatial interaction.  This means it cannot be trivially implemented with a button press or joystick.  This bonus functionality should be added as a third mode that the user can toggle between using the A button the right controller or X button on the left controller.  Make sure to describe your bonus interaction at the submission information section of your readme file, so we know what to test when grading the assignment.  (2)
 
 Make sure to document all third party assets in your readme file. ***Be aware that points will be deducted for using third party assets that are not properly documented.***
 
