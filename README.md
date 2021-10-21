@@ -22,9 +22,16 @@ Clone the assignment using GitHub Classroom.  The project has been configured fo
 
 Graded out of 20 points. 
 
-1. Implement the **Go-Go** grasping technique (see [Lecture 12](https://www.beautiful.ai/player/-Mm-BRr29z-cOImVB72w), slide 26) on both controllers.  This will involve computing the distance between each controller and the headset.  For distances less than some threshold *d*, the location of the controller should match the user's hand to allow them to easily grab nearby objects.  For distances greater than *d*, the hand should be scaled forward to extend the user's reach.  You should experiment with different values for *d* and the distance scale factor to settings that work comfortably. (6)
+1. Implement a **Fishing Reel** variant of the pointing technique (see [Lecture 14](https://www.beautiful.ai/player/-MmYjKi7-rNfp52MCqKE), slide 12).  When an object is grabbed using the laser pointer, the user should be able to translate the object forwards and backwards along the ray using the thumbstick.  This should work for both controllers.  (5)
+   *Hint: the `PointGrabber` script creates an object called `Grab Point` and makes the grabbed object its child.  You can therefore manipulate the location of the object by moving the grab point.*
+2. Implement the **Go-Go** grasping technique (see [Lecture 12](https://www.beautiful.ai/player/-Mm-BRr29z-cOImVB72w), slide 26) on both controllers.  This will involve computing the distance between each controller and the headset.  For distances less than some threshold *d*, the location of the controller should match the user's hand to allow them to easily grab nearby objects.  For distances greater than *d*, the hand should be scaled forward to extend the user's reach.  You should experiment with different values for *d* and the distance scale factor to settings that work comfortably. (4)
    *Hint: you should modify the `localPosition` transform of the `controller_l` and `controller_r` game objects, which are children of the `LeftHand Controller` and `RightHand Controller` game objects, respectively.*
-2. The user should be able to toggle the Go-Go- technique on and off using the A button on the right controller and the X button on the left controller. (4)
+3. The user should be able to turn the Go-Go technique on and off using the A button on the right controller or the X button on the left controller.  Pressing either button should toggle the Go-Go technique for *both* hands. (1)
+4. Implement a **Spindle** between the two controllers (see [Lecture 14](https://www.beautiful.ai/player/-MmYjKi7-rNfp52MCqKE), slide 48).  You can use a small object such as a cube to mark the midpoint.  The spindle should only be active when the Go-Go technique is toggled off. (2)
+5. When the user grabs an object when the spindle is active, the object should be translated to the midpoint of the spindle. (2)
+6. When the user moves their hands, the grabbed object should be translated to follow the midpoint of the spindle.  (2)
+7. When the user moves their hands, the grabbed object should be rotated to match the alignment of the spindle.  Note that you only need to worry about yaw and roll (rotation about the Y and Z axes).  (2)
+8. When the user moves their hands closer together or further apart, the grabbed object should be scaled up or down based on the distance between them.  (2)
 
 Make sure to document all third party assets in your readme file. ***Be aware that points will be deducted for using third party assets that are not properly documented.***
 
