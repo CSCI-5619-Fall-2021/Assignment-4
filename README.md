@@ -2,7 +2,7 @@
 
 **Due: Thursday, November 4, 10:00pm CDT**
 
-TBD
+In this assignment, you will implement some more advanced selection and manipulation techniques that were discussed in class.
 
 ## Submission Information
 
@@ -16,13 +16,15 @@ Third Party Assets:
 
 ## Getting Started
 
-Clone the assignment using GitHub Classroom.  The project has been configured for the Oculus Quest, and the [XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html) package has already been imported. 
+Clone the assignment using GitHub Classroom.  The project has been configured for the Oculus Quest, and the [XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html) package has already been imported.  The project contains more sophisticated versions of the grabbing and pointing scripts we implemented in [Lecture 13](https://github.com/CSCI-5619-Fall-2021/Lecture-13).  Both controllers have the `GraspGrabber` and `PointGrabber` components, both of which extend from the `Grabber` base class.  Every object in the scene is `Grabbable` except for the ground.
 
 ## Rubric
 
 Graded out of 20 points. 
 
-1. TBD
+1. Implement the **Go-Go** grasping technique (see [Lecture 12](https://www.beautiful.ai/player/-Mm-BRr29z-cOImVB72w), slide 26) on both controllers.  This will involve computing the distance between each controller and the headset.  For distances less than some threshold *d*, the location of the controller should match the user's hand to allow them to easily grab nearby objects.  For distances greater than *d*, the hand should be scaled forward to extend the user's reach.  You should experiment with different values for *d* and the distance scale factor to settings that work comfortably. (6)
+   *Hint: you should modify the `localPosition` transform of the `controller_l` and `controller_r` game objects, which are children of the `LeftHand Controller` and `RightHand Controller` game objects, respectively.*
+2. The user should be able to toggle the Go-Go- technique on and off using the A button on the right controller and the X button on the left controller. (4)
 
 Make sure to document all third party assets in your readme file. ***Be aware that points will be deducted for using third party assets that are not properly documented.***
 
