@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Pointer : MonoBehaviour
+public class PointGrabber : Grabber
 {
     public LineRenderer laserPointer;
     public Material grabbablePointerMaterial;
@@ -69,7 +69,7 @@ public class Pointer : MonoBehaviour
         }
     }
 
-    void Grab(InputAction.CallbackContext context)
+    public override void Grab(InputAction.CallbackContext context)
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
@@ -78,7 +78,13 @@ public class Pointer : MonoBehaviour
             {
                 grabPoint.localPosition = new Vector3(0, 0, hit.distance);
 
+                if (hit.collider.GetComponent<Grabbable>().GetCurrentGrabber() != null)
+                {
+                    hit.collider.GetComponent<Grabbable>().GetCurrentGrabber().Release(new InputAction.CallbackContext());
+                }
+
                 grabbedObject = hit.collider.GetComponent<Grabbable>();
+                grabbedObject.SetCurrentGrabber(this);
 
                 if (grabbedObject.GetComponent<Rigidbody>())
                 {
@@ -92,7 +98,7 @@ public class Pointer : MonoBehaviour
         }
     }
 
-    void Release(InputAction.CallbackContext context)
+    public override void Release(InputAction.CallbackContext context)
     {
         if (grabbedObject)
         {

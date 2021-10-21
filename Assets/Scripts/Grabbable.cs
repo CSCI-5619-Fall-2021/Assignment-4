@@ -9,6 +9,11 @@ public class Grabbable : MonoBehaviour
     void Start()
     {
         currentGrabber = null;
+
+        if (this.GetComponent<Rigidbody>())
+        {
+            this.GetComponent<Rigidbody>().Sleep();
+        }
     }
 
     public void SetCurrentGrabber(Grabber grabber)
