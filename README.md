@@ -14,6 +14,8 @@ UMN Email:
 
 Third Party Assets:
 
+Bonus Challenge Description (if applicable):
+
 ## Getting Started
 
 Clone the assignment using GitHub Classroom.  The project has been configured for the Oculus Quest, and the [XR Interaction Toolkit](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@1.0/manual/index.html) package has already been imported.  The project contains more sophisticated versions of the grabbing and pointing scripts we implemented in [Lecture 13](https://github.com/CSCI-5619-Fall-2021/Lecture-13).  Both controllers have the `GraspGrabber` and `PointGrabber` components, both of which extend from the `Grabber` base class.  Every object in the scene is `Grabbable` except for the ground.
