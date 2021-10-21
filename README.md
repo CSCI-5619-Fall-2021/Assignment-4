@@ -2,7 +2,7 @@
 
 **Due: Thursday, November 4, 10:00pm CDT**
 
-In this assignment, you will implement some more advanced selection and manipulation techniques that were discussed in class.
+In this assignment, you will implement several more advanced selection and manipulation techniques that were discussed in class.
 
 ## Submission Information
 
