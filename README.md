@@ -1,6 +1,6 @@
 # Assignment 4: Selection and Manipulation
 
-**Due: Thursday, November 4, 10:00pm CDT**
+**Due: Friday, November 5, 10:00pm CDT** (extended)
 
 In this assignment, you will implement several more advanced selection and manipulation techniques that were discussed in class.
 
